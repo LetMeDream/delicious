@@ -11,7 +11,7 @@ function App() {
 }
 
 const Salute = styled.h1`
-  padding: 0rem 2rem
+  padding: 1rem 2rem
 `
 
 export default App;

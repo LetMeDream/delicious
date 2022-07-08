@@ -14,9 +14,23 @@ function Popular() {
   }, []);
 
   const getPopular = async () => {
-    const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9`);
-    const data = await api.json();
-    setPopular(data.recipes);
+
+    /* Since we really don't want it to refresh every single time we could use LocalStorage in order to save the returned...
+    what?
+    Array? 
+    */
+    const check = localStorage.getItem('popular');
+    if(check){
+      setPopular(JSON.parse(localStorage.getItem('popular')))
+    }else{
+      const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9`);
+      const data = await api.json();
+      setPopular(data.recipes);
+      localStorage.setItem('popular', JSON.stringify(data.recipes))
+    }
+    /* Actually really easy stuff tbh */
+
+
   }
 
 
@@ -54,7 +68,7 @@ function Popular() {
 
 /* Here we will create our styled components */
 const Wrapper = styled.div`
-  padding: 0rem 2rem;
+  padding: 1rem 2rem;
   background-color: transparent;
 `
 const Card = styled.div`
