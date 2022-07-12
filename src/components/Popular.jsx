@@ -1,7 +1,7 @@
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 // Default theme
-import '@splidejs/react-splide/css/sea-green';
-import { useEffect, useState } from "react";
+import '@splidejs/react-splide/css';
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 function Popular() {
@@ -40,23 +40,31 @@ function Popular() {
       <Splide 
         options={ {
           rewind: true,
-          perPage: 3,
+          perPage: 4,
           perMove: 1,
+          gap: '20px',
           updateOnMove: true,
-          focus:'center'
+          focus:'center',
+          breakpoints: {
+            640: {
+              perPage: 1,
+            },
+          }
         } 
       }>
         {
           popular.map((recipe) => {       
               return (
-                <SplideSlide className='splidex'>
-                    <Card key={recipe.id}> 
+                <React.Fragment key={recipe.id}>
+                  <SplideSlide className='splidex'>
+                    <Card > 
                       <p>{recipe.title}</p>
                       <img src={recipe.image} alt={recipe.title} />
                       <Gradient></Gradient>
                     </Card>  
-
-                </SplideSlide>         
+                  </SplideSlide>     
+                </React.Fragment>
+    
               );           
           })
         }
@@ -70,17 +78,19 @@ function Popular() {
 const Wrapper = styled.div`
   padding: 1rem 2rem;
   background-color: transparent;
+  h2{
+    padding-bottom: .25em;
+  }
 `
 const Card = styled.div`
   text-align:center;
   min-height:max-content;
   border-radius:10px;
-  margin-left:20px;
   position:relative;
   overflow:hidden;
   p{
     position:absolute;
-    bottom:10px;
+    bottom:25px;
     width:100%;
     color:white;
     text-shadow:1px 1px black;
@@ -95,7 +105,6 @@ const Card = styled.div`
 `
 const Gradient = styled.div`
   position:absolute;
-  width:100%;
   height:100%;
   top:0;
   border-radius:10px;
