@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Splide, SplideSlide } from '@splidejs/react-splide';
+import React from 'react'; 
 import '@splidejs/react-splide/css';
 import { useEffect, useState } from "react";
 
@@ -29,44 +30,46 @@ function Veggie() {
   
 
   return (
-    <Title>
-      <h2>Here we have some ~weak~ vegetarian options..:</h2>
+    <React.Fragment>
+      <Title>
+        <h2>Here we have some ~weak~ vegetarian options..:</h2>
 
-      <Wrapper>
-          <Splide 
-            options={ {
-              rewind: true,
-              perPage: 4,
-              perMove: 1,
-              updateOnMove: true,
-              focus:'center',
-              gap: '20px',
-              breakpoints: {
-                640: {
-                  perPage: 1,
-                },
+        <Wrapper>
+            <Splide 
+              options={ {
+                rewind: true,
+                perPage: 4,
+                perMove: 1,
+                updateOnMove: true,
+                focus:'center',
+                gap: '20px',
+                breakpoints: {
+                  640: {
+                    perPage: 1,
+                  },
+                }
+              } 
+            }>
+              {
+                veggies.map((recipe) => {       
+                    return (
+                      <SplideSlide className='  '>
+                          <Card key={recipe.id}> 
+                            <p>{recipe.title}</p>
+                            <img src={recipe.image} alt={recipe.title} />
+                            <Gradient></Gradient>
+                          </Card>  
+
+                      </SplideSlide>         
+                    );           
+                })
               }
-            } 
-          }>
-            {
-              veggies.map((recipe) => {       
-                  return (
-                    <SplideSlide className='  '>
-                        <Card key={recipe.id}> 
-                          <p>{recipe.title}</p>
-                          <img src={recipe.image} alt={recipe.title} />
-                          <Gradient></Gradient>
-                        </Card>  
+            </Splide>
 
-                    </SplideSlide>         
-                  );           
-              })
-            }
-          </Splide>
+        </Wrapper>
 
-      </Wrapper>
-
-    </Title>
+      </Title>
+    </React.Fragment>
   )
 }
 
