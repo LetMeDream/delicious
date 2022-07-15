@@ -38,7 +38,7 @@ function Veggie() {
             <Splide 
               options={ {
                 rewind: true,
-                perPage: 4,
+                perPage: 3,
                 perMove: 1,
                 updateOnMove: true,
                 focus:'center',
@@ -53,14 +53,16 @@ function Veggie() {
               {
                 veggies.map((recipe) => {       
                     return (
-                      <SplideSlide className='  '>
-                          <Card key={recipe.id}> 
-                            <p>{recipe.title}</p>
-                            <img src={recipe.image} alt={recipe.title} />
-                            <Gradient></Gradient>
-                          </Card>  
+                      <React.Fragment key={recipe.id}>
+                        <SplideSlide >
+                            <Card > 
+                              <p>{recipe.title}</p>
+                              <img src={recipe.image} alt={recipe.title} />
+                              <Gradient></Gradient>
+                            </Card>  
 
-                      </SplideSlide>         
+                        </SplideSlide>   
+                      </React.Fragment>      
                     );           
                 })
               }

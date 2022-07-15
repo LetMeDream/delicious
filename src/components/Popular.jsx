@@ -10,7 +10,6 @@ function Popular() {
 
   useEffect( () => {
     getPopular();
-    console.log('Me ejecuto sólo una vez')
   }, []);
 
   const getPopular = async () => {
@@ -106,6 +105,7 @@ const Card = styled.div`
 const Gradient = styled.div`
   position:absolute;
   height:100%;
+  width:100%;
   top:0;
   border-radius:10px;
   z-index: 12;
