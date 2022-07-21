@@ -9,7 +9,7 @@ import styled from 'styled-components';
 function Category() {
   return (
     <Nav>
-        <SLink to='/'>
+        <SLink to='/splide'>
             <IoSquareOutline className='io'></IoSquareOutline>
         </SLink>
         <SLink to='/cuisine/italian'>
@@ -56,26 +56,27 @@ const SLink=styled(NavLink)`
     transition: .25s all;
 
     border-radius: 50%;
-    width:5rem;
-    height:5rem;
+    width:5.75rem;
+    height:5.75rem;
     font-size: 1rem;
     :visited{
         color:black;
     }
     &.active{
-        color:white;
-        background: linear-gradient(to right, #CEE5D0, #CEE5D0);
+        color:black;
+        background: linear-gradient(to right, #F0EBE3, #E4DCCF);
     }
 
     :nth-child(1){
         margin-right:1em;
     }
     :not(:nth-child(1)){
-        background-color:#FCF8E8;
+        background-color:#576F72 ;
     }
     :hover:not(:nth-child(1)):not(.active){
-        color:#94B49F;
-    }
+        color:white;
+        background-color: #7D9D9C;
+    }   
 
 `
 export default Category

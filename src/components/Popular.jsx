@@ -3,6 +3,7 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import {Link} from 'react-router-dom'
 
 function Popular() {
 
@@ -56,10 +57,12 @@ function Popular() {
               return (
                 <React.Fragment key={recipe.id}>
                   <SplideSlide className='splidex'>
-                    <Card > 
-                      <p>{recipe.title}</p>
-                      <img src={recipe.image} alt={recipe.title} />
-                      <Gradient></Gradient>
+                    <Card>
+                      <Link to={'/recipe/' + recipe.id}>
+                        <p>{recipe.title}</p>
+                        <img src={recipe.image} alt={recipe.title} />
+                        <Gradient></Gradient>
+                      </Link> 
                     </Card>  
                   </SplideSlide>     
                 </React.Fragment>
@@ -109,7 +112,7 @@ const Gradient = styled.div`
   top:0;
   border-radius:10px;
   z-index: 12;
-  background: linear-gradient(to top, rgba(0, 0, 0, .10), transparent);
+  background: linear-gradient(to top, #fb080819, transparent);
 `
 
 

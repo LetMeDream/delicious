@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import {motion} from 'framer-motion'
 import {Link, useParams} from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import Search from '../components/Search'
 
 function Cuisine() {
     const params = useParams();
@@ -14,10 +15,11 @@ function Cuisine() {
         const check = localStorage.getItem(params.type);
         if(check){
             setCuisine(JSON.parse(localStorage.getItem(params.type) ) )
+            /* console.log(cuisine) */
         }else{
             const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9&cuisine=${params.type}`);
             const data = await api.json();
-            console.log(data.recipes, params.type);
+            /* console.log(data.recipes, params.type); */
             setCuisine(data.recipes);
             localStorage.setItem(params.type, JSON.stringify(data.recipes))
         }
@@ -35,15 +37,19 @@ function Cuisine() {
   return (
     <>
         <Category />
+        <Search></Search>
+        <Title>Some <strong>{params.type}</strong> cuisine:</Title>
         <Grid>
             {
                 cuisine.map(
                     (element) => {
                         return(
-                            <Card>
+                            <Card key={element.id}>
+                              <Link to={'/recipe/' + element.id}>
                                 <img width='100%' height='100%' src={element.image}></img>
                                 <h4>{element.title}</h4>
                                 <Gradient></Gradient>
+                              </Link>
                             </Card>
                                 
                         )
@@ -69,6 +75,7 @@ const Card = styled.div`
   border-radius:10px;
   position:relative;
   overflow:hidden;
+  cursor:pointer;
   h4{
     position:absolute;
     bottom:25px;
@@ -94,10 +101,10 @@ const Gradient = styled.div`
   background: linear-gradient(to top, #0000001a, transparent);
 `
 
-const Border = styled.div`
-    *{
-      border:1px solid red;
-    }
+const Title = styled.div`
+    font-family: 'Roboto', sans-serif;
+    font-size:2rem;
+    padding-left: 3rem;
 `
 
 
