@@ -4,27 +4,30 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import Cuisine from "./pages/Cuisine";
 import Searched from "./pages/Searched";
 import { useEffect } from "react";
+import { AnimatePresence } from 'framer-motion'
 
 
 function App() {
-  /* let location = useLocation();
+  let location = useLocation();
   useEffect(()=>{
-    console.log(location)
-  },[location]); */
+    console.log(location.pathname)
+  },[location]);
 
 
   return (
-    <Routes>
-      <Route path='/splide' element={ <Pages/> }></Route>
+    <AnimatePresence exitBeforeEnter >
+      <Routes location={location} key={location.pathname}>
+        <Route path='/splide' element={ <Pages/> }></Route>
 
-      <Route path='/' element={ <Pages/> }/>
-      <Route path="/cuisine/:type" element={<Cuisine />} />
-      <Route path='/searched/:keyword' element={<Searched/>}/>
-      <Route path='/recipe/:id' element={<Recipe/>}/>
-      {/*  */}
-  
+        <Route path='/' element={ <Pages/> }/>
+        <Route path="/cuisine/:type" element={<Cuisine />} />
+        <Route path='/searched/:keyword' element={<Searched/>}/>
+        <Route path='/recipe/:id' element={<Recipe/>}/>
+        {/*  */}
+    
 
-    </Routes>
+      </Routes>
+    </AnimatePresence>
   );
 }
 

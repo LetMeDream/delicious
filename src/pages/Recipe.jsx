@@ -17,8 +17,8 @@ function Recipe() {
   const getRecipe = async () =>{
     let api = await fetch(`https://api.spoonacular.com/recipes/${params.id}/information?apiKey=${process.env.REACT_APP_API_KEY}`)
     let json = await api.json();
-    console.log(json);
     setDetails(json);
+    console.log(json);
   }
 
   useEffect(()=>{
@@ -30,12 +30,12 @@ function Recipe() {
         <Category/>
         <Search/>
         <DetailWrapper>
-          <div>
+          <ImageSide>
             <h2>{details.title}</h2>
             <img src={details.image}  alt="" />
-          </div>
+          </ImageSide>
           <Info>
-            <div>
+            <div className='buttons'>
               <Button className={activeTab === 'instructions' ? 'active' : ''} 
                       onClick={ () => setActiveTab('instructions') }>
                         Instruccions
@@ -45,6 +45,25 @@ function Recipe() {
                         Ingredients
               </Button>
             </div>
+
+            { activeTab === 'instructions' && (
+              <div>
+                <p dangerouslySetInnerHTML={{ __html: details.summary }}></p>
+                <br/>
+                <p dangerouslySetInnerHTML={{ __html: details.instructions }}></p>
+              </div>
+            )}
+
+            { activeTab === 'ingredients' && (
+              <ul style={{listStylePosition:'inside'}}>
+                { details.extendedIngredients?.map( (ingredient)=>{
+                  return <li id={details.id}>{ingredient.original}</li>
+                } ) }
+              </ul>
+            ) }
+            
+
+
           </Info>
         </DetailWrapper>
     </>
@@ -71,6 +90,11 @@ const DetailWrapper = styled.div`
     margin-top:2rem;
   }
 
+  @media (max-width: 785px){
+      flex-direction: column;
+      align-items: center;
+  }
+
 `
 
 const Button = styled.button`
@@ -79,15 +103,35 @@ const Button = styled.button`
   background: white;
   border: 2px solid black;
   margin-inline: 1rem;
+  margin-bottom:1em;
   font-weight: 600;
+  cursor:pointer;
 `
 
 const Info = styled.div`
   margin-left: 5rem;
-  border:1px solid red;
-  div{
+  width:40%;
+  /* border:1px solid red; */
+  div.buttons{
     display:flex;
     justify-content: space-around;
+  }
+
+  @media (max-width: 785px){
+    margin-left: 0rem;
+    width: 90%;
+  }
+
+`
+
+const ImageSide = styled.div`
+  img{
+    @media (max-width: 785px){
+      width: 90%;
+      margin-inline:auto;
+      display:block;
+      margin-bottom: 2rem;
+    }
   }
 `
 

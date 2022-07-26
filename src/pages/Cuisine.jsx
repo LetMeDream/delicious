@@ -38,8 +38,18 @@ function Cuisine() {
     <>
         <Category />
         <Search></Search>
-        <Title>Some <strong>{params.type}</strong> cuisine:</Title>
-        <Grid>
+        <Title
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition= {{ duration: .25}}
+        >Some <strong>{params.type}</strong> cuisine:</Title>
+        <Grid
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition= {{ duration: .25}}
+        >
             {
                 cuisine.map(
                     (element) => {
@@ -62,7 +72,7 @@ function Cuisine() {
 }
 
 /* Here we will create our styled components */
-const Grid = styled.div`
+const Grid = styled(motion.div)`
   display:grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   text-align: center;
@@ -101,7 +111,7 @@ const Gradient = styled.div`
   background: linear-gradient(to top, #0000001a, transparent);
 `
 
-const Title = styled.div`
+const Title = styled(motion.div)`
     font-family: 'Roboto', sans-serif;
     font-size:2rem;
     padding-left: 3rem;
