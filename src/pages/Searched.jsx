@@ -18,6 +18,7 @@ function Searched() {
 
   useEffect(()=>{
     getSearched();
+    console.log(searched)
   },[keyword])
 
 

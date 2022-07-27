@@ -125,6 +125,12 @@ const Info = styled.div`
 `
 
 const ImageSide = styled.div`
+  h2{
+    text-align: center;
+    @media (min-width: 785px){
+      text-align: left;
+    }
+  }
   img{
     @media (max-width: 785px){
       width: 90%;

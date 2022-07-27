@@ -44,6 +44,9 @@ const FormStyle = styled.form`
         top:50%;
         transform:translateY(-50%);
     }
+    @media (max-width:765px) {
+        margin-block: 1em;
+    }
 `
 
 export default Search
