@@ -55,6 +55,8 @@ function Searched() {
 const Grid = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem,1fr));
+    /* grid-template-rows: 1fr 1fr 1fr; */
+    max-width: .5vw;
     gap:3rem;
     padding: 10px 3rem;
 `

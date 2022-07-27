@@ -226,7 +226,7 @@ const Menu=styled.div`
     align-items: center;
     display:flex;
     flex-direction: column;
-    margin-block: 1.25rem;
+    padding-block: 1.25rem;
     cursor:pointer;
     z-index:20;
     top:60px;
@@ -246,7 +246,7 @@ const Menu=styled.div`
 const ResponsiveNav=styled.div`
     top:10px;
     padding-block: 1.5em;
-    margin-block: 2em ;
+    padding-bottom: 2em ;
     display:flex;
     flex-direction: column;
     justify-content: center;
