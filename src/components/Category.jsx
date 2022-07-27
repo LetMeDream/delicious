@@ -229,6 +229,7 @@ const Menu=styled.div`
     padding-block: 1.25rem;
     cursor:pointer;
     z-index:20;
+    top:40px;
     background:transparent;
     transition: all 1s;
     pointer-events: none;
