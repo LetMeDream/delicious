@@ -103,10 +103,10 @@ const SLink=styled(NavLink)`
     text-decoration: none;
     cursor: pointer;
     transition: .25s all;
-
-    border-radius: 50%;
+    border-radius: 10px;
+    
     width:5.75rem;
-    height:5.75rem;
+    height:3.75rem;
     font-size: 1rem;
     :visited{
         color:black;
@@ -139,9 +139,9 @@ const ResponsiveSLink=styled(NavLink)`
     text-decoration: none;
     cursor: pointer;
     transition: .25s all;
-    border-radius: 50%;
+    border-radius: 10px;
     width:4rem;
-    height:4rem;
+    height:2rem;
     font-size: .85rem;
     transition: 1s all;
     :visited{

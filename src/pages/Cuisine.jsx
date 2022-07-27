@@ -85,6 +85,15 @@ const Card = styled.div`
   border-radius:10px;
   position:relative;
   overflow:hidden;
+  transition: .25s padding, .25s box-shadow;
+  /* transition-delay: .25s box-shadow; */
+  padding:2px;
+  box-shadow: 0px 0px gray;;
+  border:none;
+  :hover{
+    box-shadow: 0px 3px 4px gray;;
+    padding:0px;
+  }
   cursor:pointer;
   h4{
     position:absolute;
@@ -103,8 +112,15 @@ const Card = styled.div`
 `
 const Gradient = styled.div`
   position:absolute;
-  height:100%;
-  width:100%;
+  height:calc(100% - 2px);
+  width:calc(100% - 4px);
+  transition: .75s all;
+  :hover{
+    height: 100%;
+    width: 100%;
+    
+  }
+
   top:0;
   border-radius:10px;
   z-index: 12;
