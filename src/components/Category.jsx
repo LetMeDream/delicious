@@ -222,10 +222,11 @@ const Menu=styled.div`
     padding:4px;
     border-radius:.5em;
     width:100%;
+    height: 100vh;
     align-items: center;
     display:flex;
     flex-direction: column;
-    padding-block: 1.25rem;
+    margin-block: 1.25rem;
     cursor:pointer;
     z-index:20;
     top:60px;
