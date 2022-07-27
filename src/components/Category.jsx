@@ -246,7 +246,7 @@ const Menu=styled.div`
 const ResponsiveNav=styled.div`
     top:10px;
     padding-block: 1.5em;
-    padding-bottom: 2em ;
+    margin-block: 2em ;
     display:flex;
     flex-direction: column;
     justify-content: center;
