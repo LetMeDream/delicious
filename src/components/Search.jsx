@@ -17,7 +17,7 @@ function Search() {
   return (
     <>
         <FormStyle onSubmit={ handleSubmit }>
-            <input autoComplete='off' type="text" onChange={(e)=>{setKeywork(e.target.value)}} value={keyword} name="seahch" id="search" />
+            <input placeholder='Look for your dessert' autoComplete='off' type="text" onChange={(e)=>{setKeywork(e.target.value)}} value={keyword} name="seahch" id="search" />
             <FaSearch></FaSearch>
         </FormStyle>
     </>
