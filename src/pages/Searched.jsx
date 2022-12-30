@@ -53,6 +53,7 @@ function Searched() {
 }
 
 const Grid = styled.div`
+    /* border: 1px solid red; */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem,1fr));
     /* grid-template-rows: 1fr 1fr 1fr; */

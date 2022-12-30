@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import Search from "../components/Search";
 import Category from "../components/Category";
 
-import React from 'react'
 
 function Recipe() {
 
@@ -38,7 +37,7 @@ function Recipe() {
             <div className='buttons'>
               <Button className={activeTab === 'instructions' ? 'active' : ''} 
                       onClick={ () => setActiveTab('instructions') }>
-                        Instruccions
+                        Instructions
               </Button>
               <Button className={activeTab === 'ingredients' ? 'active' : ''} 
                       onClick={ () => setActiveTab('ingredients') }>
@@ -72,13 +71,11 @@ function Recipe() {
 }
 
 const DetailWrapper = styled.div`
-  margin-top:2rem;
   display:flex;
+  width:80%;
+  margin: 2rem auto;
   justify-content: center;
-  .active{
-    color:white;
-    background:linear-gradient(35deg, #7D9D9C, #576F72);
-  }
+
   h2{
     margin-bottom: 2rem;
   }
@@ -100,12 +97,22 @@ const DetailWrapper = styled.div`
 const Button = styled.button`
   padding: 1rem 2rem;
   color: #313131;
-  background: white;
-  border: 2px solid black;
+  background-color: white;
+  border: 1px solid #0f1922;
   margin-inline: 1rem;
   margin-bottom:1em;
   font-weight: 600;
   cursor:pointer;
+  border-radius: 30px;
+  transition: .3s all;
+  &.active{
+    background-color:#0f1922;
+    color:white;
+  }
+  :hover{
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  }
+
 `
 
 const Info = styled.div`
@@ -121,10 +128,12 @@ const Info = styled.div`
     margin-left: 0rem;
     width: 90%;
   }
+  font-family: 'Roboto', sans-serif !important;
 
 `
 
 const ImageSide = styled.div`
+  
   h2{
     text-align: center;
     @media (min-width: 785px){
@@ -132,6 +141,9 @@ const ImageSide = styled.div`
     }
   }
   img{
+    width:80%;
+    margin: 0 auto;
+    border-radius: 20px;
     @media (max-width: 785px){
       width: 90%;
       margin-inline:auto;

@@ -33,7 +33,7 @@ const FormStyle = styled.form`
         padding:.75rem 1.25rem;
         padding-left: 2.0rem;
         border:none;
-        background:linear-gradient(35deg, #7D9D9C, #576F72);
+        background:#0f1922;
         border-radius:12px;
         outline:none;
         color:white;
@@ -42,6 +42,7 @@ const FormStyle = styled.form`
         position:absolute;
         left: 10px;
         top:50%;
+        color:white;
         transform:translateY(-50%);
     }
     @media (max-width:765px) {

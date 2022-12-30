@@ -102,8 +102,8 @@ const SLink=styled(NavLink)`
     padding:.75em 1.75em;
     text-decoration: none;
     cursor: pointer;
-    transition: .25s all;
-    border-radius: 10px;
+    transition: .300s all;
+    border-radius: 30px;
     
     width:5.75rem;
     height:3.75rem;
@@ -112,19 +112,19 @@ const SLink=styled(NavLink)`
         color:black;
     }
     &.active{
-        color:black;
-        background: linear-gradient(to right, #F0EBE3, #E4DCCF);
+        color:white;
+        background-color: #0f1922 ;
     }
 
     :nth-child(1){
         margin-right:1em;
     }
-    :not(:nth-child(1)){
-        background-color:#576F72 ;
-    }
-    :hover:not(:nth-child(1)):not(.active){
+    /* :not(:nth-child(1)){
+        background-color:white ;
+    } */
+    :hover:not(.active){
         color:white;
-        background-color: #7D9D9C;
+        background-color: #0f1922 ;
     }   
 
     `

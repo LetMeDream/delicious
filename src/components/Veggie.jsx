@@ -33,7 +33,7 @@ function Veggie() {
   return (
     <React.Fragment>
       <Title>
-        <h2>Here we have some ~weak~ vegetarian options..:</h2>
+        <h2>Here we have some vegetarian options..:</h2>
 
         <Wrapper>
             <Splide 

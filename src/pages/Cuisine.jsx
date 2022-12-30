@@ -43,7 +43,8 @@ function Cuisine() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition= {{ duration: .25}}
-        >Some <strong>{params.type}</strong> cuisine:</Title>
+        >Some <strong>{params.type}</strong> cuisine:
+        </Title>
         <Grid
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -74,7 +75,9 @@ function Cuisine() {
 /* Here we will create our styled components */
 const Grid = styled(motion.div)`
   display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  width:80%;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   text-align: center;
   gap:2rem;
   padding:10px 3rem;
