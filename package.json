@@ -1,7 +1,7 @@
 {
   "name": "deliciousss",
   "version": "0.1.0",
-  "homepage": "https://letmedream.github.io/splide",
+  "homepage": "https://letmedream.github.io/delicious",
   "private": true,
   "dependencies": {
     "@splidejs/react-splide": "^0.7.8",
