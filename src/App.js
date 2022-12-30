@@ -17,7 +17,7 @@ function App() {
   return (
     <AnimatePresence exitBeforeEnter >
       <Routes location={location} key={location.pathname}>
-        <Route path='/splide' element={ <Pages/> }></Route>
+        <Route path='/delicious' element={ <Pages/> }></Route>
 
         <Route path='/' element={ <Pages/> }/>
         <Route path="/cuisine/:type" element={<Cuisine />} />
