@@ -16,7 +16,7 @@ function Category() {
   return (
     <>
         <Nav>
-            <SLink to='/splide'>
+            <SLink to='/delicious'>
                 <IoSquareOutline className='io'></IoSquareOutline>
             </SLink>
             <SLink to='/cuisine/italian'>
@@ -51,7 +51,7 @@ function Category() {
             </HamburgueBtn>
 
             <Menu id="menu" className={`menu ${opened ? 'open' : '' }`}>
-                <ResponsiveSLink className={`${opened ? 'open' : ''}`} to='/splide'>
+                <ResponsiveSLink className={`${opened ? 'open' : ''}`} to='/delicious'>
                     <IoSquareOutline className='io'></IoSquareOutline>
                 </ResponsiveSLink>
                 <ResponsiveSLink className={`${opened ? 'open' : ''}`} to='/cuisine/italian'>
