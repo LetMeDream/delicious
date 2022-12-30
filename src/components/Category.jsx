@@ -144,20 +144,18 @@ const ResponsiveSLink=styled(NavLink)`
     height:2rem;
     font-size: .85rem;
     transition: 1s all;
-    :visited{
-        color:black;
-    }
+    /* padding:1rem; */
+    border: 1px solid #0f1922;
+    color:black;
     &.active{
-        background: linear-gradient(to right, #F0EBE3, #E4DCCF);
+        background-color:#0f1922 ;
+        color:white;
     }
     &.open{
         opacity:1;
     }
+    
 
-    /* */
-    :not(:nth-child(1)){
-        background-color:#576F72 ;
-    }
     :hover:not(:nth-child(1)):not(.active){
     }   
 `

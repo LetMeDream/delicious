@@ -144,6 +144,7 @@ const ImageSide = styled.div`
     width:80%;
     margin: 0 auto;
     border-radius: 20px;
+    
     @media (max-width: 785px){
       width: 90%;
       margin-inline:auto;

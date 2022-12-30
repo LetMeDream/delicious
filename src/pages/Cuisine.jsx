@@ -76,11 +76,12 @@ function Cuisine() {
 const Grid = styled(motion.div)`
   display:grid;
   width:80%;
-  margin: 0 auto;
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   text-align: center;
   gap:2rem;
-  padding:10px 3rem;
+  padding-block: 10px;
+  margin: 0 auto;
+  
 `
 const Card = styled.div`
   text-align:center;
