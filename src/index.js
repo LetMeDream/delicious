@@ -8,10 +8,23 @@ require('./index.css');
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+function fallbackRender({ error, resetErrorBoundary }) {
+  // Call resetErrorBoundary() to reset the error boundary and retry the render.
+
+  return (
+    <div role="alert">
+      <p>Something went wrong:</p>
+      <pre style={{ color: "red" }}>{error.message}</pre>
+      <button onClick={resetErrorBoundary}>wut</button>
+    </div>
+  );
+}
+
 root.render(
   //<React.StrictMode>
     <BrowserRouter>
-      <ErrorBoundary fallback={<div>Something went wrong</div>}>
+      <ErrorBoundary fallbackRender={fallbackRender}>
         <App />
       </ErrorBoundary>
     </BrowserRouter>
