@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/delicious/static/css/main.70891978.css",
-    "main.js": "/delicious/static/js/main.4ca3aad8.js",
+    "main.js": "/delicious/static/js/main.4166a15a.js",
     "index.html": "/delicious/index.html",
     "main.70891978.css.map": "/delicious/static/css/main.70891978.css.map",
-    "main.4ca3aad8.js.map": "/delicious/static/js/main.4ca3aad8.js.map"
+    "main.4166a15a.js.map": "/delicious/static/js/main.4166a15a.js.map"
   },
   "entrypoints": [
     "static/css/main.70891978.css",
-    "static/js/main.4ca3aad8.js"
+    "static/js/main.4166a15a.js"
   ]
 }
