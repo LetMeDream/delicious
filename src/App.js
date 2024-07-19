@@ -23,8 +23,6 @@ function App() {
         <Route path="/cuisine/:type" element={<Cuisine />} />
         <Route path='/searched/:keyword' element={<Searched/>}/>
         <Route path='/recipe/:id' element={<Recipe/>}/>
-        {/*  */}
-    
 
       </Routes>
     </AnimatePresence>
