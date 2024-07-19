@@ -56,7 +56,7 @@ function Recipe() {
             { activeTab === 'ingredients' && (
               <ul style={{listStylePosition:'inside'}}>
                 { details.extendedIngredients?.map( (ingredient)=>{
-                  return <li id={details.id}>{ingredient.original}</li>
+                  return <li id={details.id}>{ingredient}</li>
                 } ) }
               </ul>
             ) }
